@@ -1,27 +1,27 @@
 package org.apache.storm.trident;
 
-import java.util.Map;
 
-import storm.trident.operation.Function;
+import java.util.ArrayList;
+import java.util.List;
+
+import storm.trident.operation.BaseFunction;
 import storm.trident.operation.TridentCollector;
-import storm.trident.operation.TridentOperationContext;
 import storm.trident.tuple.TridentTuple;
 
-public class OutbreakDetector implements Function {
+public class OutbreakDetector extends BaseFunction {
+	public static final int THRESHOLD = 10000;
+	
 
-	public void cleanup() {
-		// TODO Auto-generated method stub
-
+	public void execute(TridentTuple tuple, TridentCollector collector) {
+		String key = (String)tuple.getValue(0);
+		Long count = (Long)tuple.getValue(1);
+		if(count > THRESHOLD) {
+			List<Object> values = new ArrayList<Object>();
+			values.add("Outbreak detected for ["+ key + "]!");
+			collector.emit(values);
+		}
+		
 	}
 
-	public void prepare(Map arg0, TridentOperationContext arg1) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public void execute(TridentTuple arg0, TridentCollector arg1) {
-		// TODO Auto-generated method stub
-
-	}
 
 }
