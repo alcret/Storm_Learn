@@ -17,7 +17,7 @@ public class DiagnosisEventEmmiter implements Emitter<Long>,Serializable {
 	}
 
 	public void emitBatch(TransactionAttempt tx, Long coordinatorMeta, TridentCollector collector) {
-		for(int i =0;i<1000;i++) {
+		for(int i =0;i<10000;i++) {
 			List<Object> events = new ArrayList<Object>();
 			double lat = new Double(-30 + (int)(Math.random() * 75));
 			double lng = new Double(-120 + (int)(Math.random()) * 70);

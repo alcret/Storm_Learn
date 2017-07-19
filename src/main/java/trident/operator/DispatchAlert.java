@@ -11,7 +11,8 @@ public class DispatchAlert extends BaseFunction {
     public void execute(TridentTuple tuple, TridentCollector collector) {
         String alert = (String) tuple.getValue(0);
         Log.error("ALERT RECEIVED [" + alert + "]");
-        Log.error("Dispatch the national guard!");
+        Log.error("Dispatch the national guard!!!");
+        System.out.println("运行结束===================");
         System.exit(0);
     }
 }

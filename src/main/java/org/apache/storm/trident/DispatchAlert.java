@@ -14,6 +14,7 @@ public class DispatchAlert extends BaseFunction {
 		String alert = (String)tuple.getValue(0);
 		Log.error("ALERT RECEIVED [" + alert + "]");
 		Log.error("Dispatch the national guard!");
+		System.out.println("程序正常结束================================");
 		System.exit(0);
 		
 	}

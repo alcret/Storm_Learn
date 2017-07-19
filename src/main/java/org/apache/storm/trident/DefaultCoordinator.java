@@ -15,12 +15,12 @@ public class DefaultCoordinator implements BatchCoordinator<Long>,Serializable {
 
 	}
 
-	public Long initializeTransaction(long txid, Long prevMetadata, Long arg2) {
+	public Long initializeTransaction(long txid, Long prevMetadata, Long currMetadata) {
 		LOG.info("Initializing Transaction [ " + txid + "]");
 		return null;
 	}
 
-	public boolean isReady(long arg0) {
+	public boolean isReady(long txid) {
 		return true;
 	}
 

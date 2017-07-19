@@ -37,7 +37,7 @@ public class CityAssignment extends BaseFunction {
 			double x = (city.getValue()[0] - diagnosis.lng) * Math.cos((city.getValue()[1] - diagnosis.lat) / 2);
 			double y = (city.getValue()[1] - diagnosis.lat);
 			double d = Math.sqrt(x * x + y * y) * R;
-			if(d< leastDistance) {
+			if(d < leastDistance) {
 				leastDistance = d;
 				closestCity = city.getKey();
 			}

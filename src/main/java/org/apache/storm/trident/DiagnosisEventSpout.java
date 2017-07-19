@@ -19,11 +19,10 @@ public class DiagnosisEventSpout implements ITridentSpout<Long>{
 	}
 
 	public BatchCoordinator<Long> getCoordinator(String txStateId, Map conf, TopologyContext context) {
-		
 		return coordinator;
 	}
 
-	public Emitter<Long> getEmitter(String arg0, Map arg1, TopologyContext arg2) {
+	public Emitter<Long> getEmitter(String txStateId, Map conf, TopologyContext context) {
 		// TODO Auto-generated method stub
 		return emitter;
 	}
@@ -32,5 +31,4 @@ public class DiagnosisEventSpout implements ITridentSpout<Long>{
 		// TODO Auto-generated method stub
 		return new Fields("event");
 	}
-
 }
